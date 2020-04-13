@@ -8,8 +8,8 @@ namespace OFCPoker.Content.Element.Card
 {
     class CardStandard : Card
     {
-        SuitStandard Suit;
-        CardStandard(in short value, SuitStandard suit) : base(value) 
+        public SuitStandard Suit { get; }
+        public CardStandard (in short value, SuitStandard suit) : base(value) 
         {
             Suit = suit;
         }

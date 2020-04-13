@@ -9,20 +9,13 @@ namespace OFCPoker.Content.Element.Hand
     class Hand : ElementBase
     {
         private List<Card.Card> Cards;
-        private short MaxCards; 
         public short NumCards { get; }
 
-        public Hand(in short maxCards) //where to get max cards from? Settings? Fantasyland?
-        {
-            MaxCards = maxCards;
-        }
+        public Hand() {}
 
         public void AddCard(in Card.Card card)
         {
-            if(Cards.Count < MaxCards)
-            {
-                Cards.Add(card);
-            }
+             Cards.Add(card);
         }
 
         public void RemoveCard(in Card.Card card)

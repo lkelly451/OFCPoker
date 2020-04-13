@@ -29,7 +29,11 @@ namespace OFCPoker.Content.Element.Street
 
         public void RemoveCard(in Card.Card card)
         {
-            CurrentCards.Remove(card);
+            if(CurrentCards.Count > 0)
+            {
+                CurrentCards.Remove(card);
+            }
+            
         }
 
 

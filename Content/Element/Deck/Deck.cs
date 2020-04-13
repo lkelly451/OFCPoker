@@ -34,14 +34,19 @@ namespace OFCPoker.Content.Element.Deck
             }
         }
 
-        public void DrawCard(ref Hand.Hand hand)
+        public void DrawCards(ref Hand.Hand hand, in short numToDraw)
         {
-            if(PlayDeck.Count > 0)
+            if(PlayDeck.Count < numToDraw)
+            {
+                //message UI
+                return;
+            }
+            for(short currentDraw = 0; currentDraw < numToDraw; ++currentDraw)
             {
                 hand.AddCard(PlayDeck[0]);
 
                 PlayDeck.RemoveAt(0);
-            }
+            }              
             
         }
 
